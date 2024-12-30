@@ -38,6 +38,7 @@ public class HumMenuPlugin : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"AdvancedAsset"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
