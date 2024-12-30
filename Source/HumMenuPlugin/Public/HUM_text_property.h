@@ -10,7 +10,7 @@
 #include "HUM_text_property.generated.h"
 
 /**
- * Data Asset для хранения свойств текста
+ * Data Asset of text properties
  */
 UCLASS(BlueprintType)
 class HUMMENUPLUGIN_API UHUM_text_property : public UDataAsset
@@ -18,11 +18,11 @@ class HUMMENUPLUGIN_API UHUM_text_property : public UDataAsset
     GENERATED_BODY()
 
 public:
-    // Шрифт текста (Slate Font Info)
+    // Font text (Slate Font Info)
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Text Settings")
     FSlateFontInfo FontInfo;
 
-    // Цвет текста (Slate Color)
+    // Text color settings(Slate Color)
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Text Settings")
     FSlateColor TextColor;
 };
