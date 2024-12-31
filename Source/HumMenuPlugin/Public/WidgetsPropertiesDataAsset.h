@@ -6,6 +6,7 @@
 #include "Data/AdvancedDataAsset.h"
 #include "E_Text_style.h" 
 #include "TextPropertiesDataAsset.h" // Уже существующий класс TextPropertiesDataAsset
+#include "ButtonPropertiesDataAsset.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 /**
@@ -17,7 +18,10 @@ class HUMMENUPLUGIN_API UWidgetsPropertiesDataAsset : public UAdvancedDataAsset
 	GENERATED_BODY()
 
 public:
-    // Карта с ключами типа E_Text_style и значениями типа TextPropertiesDataAsset
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")
+    
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")//Map with style of text block
     TMap<TEnumAsByte<E_Text_style>, UTextPropertiesDataAsset*> TextTypes;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")
+    UButtonPropertiesDataAsset* ButtonProperties;
 };
