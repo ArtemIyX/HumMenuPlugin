@@ -18,10 +18,12 @@ class HUMMENUPLUGIN_API UWidgetsPropertiesDataAsset : public UAdvancedDataAsset
 	GENERATED_BODY()
 
 public:
-    
+    UWidgetsPropertiesDataAsset();
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")//Map with style of text block
-    TMap<TEnumAsByte<E_Text_style>, UTextPropertiesDataAsset*> TextTypes;
+    TMap<E_Text_style, UTextPropertiesDataAsset*> TextTypes;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")
     UButtonPropertiesDataAsset* ButtonProperties;
+    UFUNCTION(BlueprintCallable)
+    void GetTextType(E_Text_style InStyle, UTextPropertiesDataAsset*& OutAsset, bool& OutSuccess);
 };

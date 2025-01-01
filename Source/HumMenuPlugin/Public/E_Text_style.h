@@ -6,7 +6,7 @@
 
 // Enum для использования в C++ и Blueprints
 UENUM(BlueprintType)
-enum  E_Text_style : uint8
+enum class  E_Text_style : uint8
 {
     NoneVal UMETA(DisplayName = "NoneVal"), // Основной стиль текста
     TextBase UMETA(DisplayName = "Text Base"), // Основной стиль текста

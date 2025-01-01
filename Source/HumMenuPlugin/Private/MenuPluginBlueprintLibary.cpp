@@ -11,7 +11,7 @@
 UWidgetsPropertiesDataAsset* UMenuPluginBlueprintLibary::GetWidgetPropertiesDataAsset()
 {
     // Получаем настройки виджетов из конфигурации
-    UWidgetPropertiesSetings* WidgetSettings = GetMutableDefault<UWidgetPropertiesSetings>();
+    const UWidgetPropertiesSetings* WidgetSettings = GetDefault<UWidgetPropertiesSetings>();
 
     // Проверяем, есть ли ссылка на Data Asset
     if (WidgetSettings && WidgetSettings->WidgetsPropertiesDataAsset.IsValid())

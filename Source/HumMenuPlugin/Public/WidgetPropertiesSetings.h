@@ -15,7 +15,7 @@ class HUMMENUPLUGIN_API UWidgetPropertiesSetings : public UDeveloperSettings
 {
 	GENERATED_BODY()
 public:
-    // —сылка на Data Asset
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets Settings", meta = (AllowedClasses = "WidgetsPropertiesDataAsset"))
+   
+    UPROPERTY(Config,EditAnywhere, BlueprintReadWrite, Category = "Widgets Settings")
     TSoftObjectPtr<UWidgetsPropertiesDataAsset> WidgetsPropertiesDataAsset;
 };
