@@ -15,7 +15,7 @@ class HUMMENUPLUGIN_API UWidgetPropertiesSetings : public UDeveloperSettings
 {
 	GENERATED_BODY()
 public:
-   
+    UWidgetPropertiesSetings(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
     UPROPERTY(Config,EditAnywhere, BlueprintReadWrite, Category = "Widgets Settings")
     TSoftObjectPtr<UWidgetsPropertiesDataAsset> WidgetsPropertiesDataAsset;
 };

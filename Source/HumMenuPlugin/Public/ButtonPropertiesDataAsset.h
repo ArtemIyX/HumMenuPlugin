@@ -23,4 +23,5 @@ public:
     // Click sound var2
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound Data")
     USoundBase* SoundVar2;
+
 };

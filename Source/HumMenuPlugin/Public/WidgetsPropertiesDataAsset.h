@@ -10,20 +10,26 @@
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS(BlueprintType)
 class HUMMENUPLUGIN_API UWidgetsPropertiesDataAsset : public UAdvancedDataAsset
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
     UWidgetsPropertiesDataAsset();
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")//Map with style of text block
-    TMap<E_Text_style, UTextPropertiesDataAsset*> TextTypes;
 
+    // Map with style of text block
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")
-    UButtonPropertiesDataAsset* ButtonProperties;
+    TMap<E_Text_style, TSoftObjectPtr<UTextPropertiesDataAsset>> TextTypes;
+
+    // Button properties
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")
+    TSoftObjectPtr<UButtonPropertiesDataAsset> ButtonProperties;
+
+    // Function to get text type
     UFUNCTION(BlueprintCallable)
     void GetTextType(E_Text_style InStyle, UTextPropertiesDataAsset*& OutAsset, bool& OutSuccess);
 };
+

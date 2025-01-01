@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "WidgetsPropertiesDataAsset.h"
 
 UWidgetsPropertiesDataAsset::UWidgetsPropertiesDataAsset()
@@ -13,14 +12,21 @@ void UWidgetsPropertiesDataAsset::GetTextType(E_Text_style InStyle, UTextPropert
 {
 	OutAsset = nullptr;
 	OutSuccess = false;
-	if (TextTypes.Contains(InStyle)) {
-		auto val = TextTypes.Find(InStyle);
-		if (val) {
-			auto val2 = *val;
-			if (val2) {
-				OutAsset = val2;
-				OutSuccess = true;
-			}
+
+	// Проверяем, есть ли данный стиль текста в карте
+	if (TextTypes.Contains(InStyle))
+	{
+		// Получаем TSoftObjectPtr из карты
+		TSoftObjectPtr<UTextPropertiesDataAsset> SoftPtr = TextTypes[InStyle];
+
+		// Загружаем объект синхронно
+		UTextPropertiesDataAsset* LoadedAsset = SoftPtr.LoadSynchronous();
+
+		// Проверяем, загрузился ли объект
+		if (LoadedAsset)
+		{
+			OutAsset = LoadedAsset;
+			OutSuccess = true;
 		}
 	}
 }

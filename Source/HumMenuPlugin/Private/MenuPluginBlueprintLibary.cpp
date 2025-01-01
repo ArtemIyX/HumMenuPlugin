@@ -1,24 +1,21 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MenuPluginBlueprintLibary.h"
-
-
 #include "Engine/Engine.h"
 #include "UObject/ConstructorHelpers.h"
-#include "WidgetPropertiesSetings.h"  // Подключаем настройки для виджетов
+#include "WidgetPropertiesSetings.h"  
 
-UWidgetsPropertiesDataAsset* UMenuPluginBlueprintLibary::GetWidgetPropertiesDataAsset()
+TSoftObjectPtr<UWidgetsPropertiesDataAsset> UMenuPluginBlueprintLibary::GetWidgetPropertiesDataAsset()
 {
-    // Получаем настройки виджетов из конфигурации
+    // get config settings
     const UWidgetPropertiesSetings* WidgetSettings = GetDefault<UWidgetPropertiesSetings>();
 
-    // Проверяем, есть ли ссылка на Data Asset
-    if (WidgetSettings && WidgetSettings->WidgetsPropertiesDataAsset.IsValid())
+    // check valid of data asset
+    if (WidgetSettings  )
     {
-        return WidgetSettings->WidgetsPropertiesDataAsset.LoadSynchronous(); // Загружаем Data Asset синхронно
+        // Возвращаем сам TSoftObjectPtr (не загружаем объект)
+        TSoftObjectPtr<UWidgetsPropertiesDataAsset> da =  WidgetSettings->WidgetsPropertiesDataAsset;
+        return da;
     }
 
-    // Если Data Asset не задан, возвращаем nullptr
-    return nullptr;
+    // Если Data Asset не задан или ссылка невалидна, возвращаем пустой TSoftObjectPtr
+    return TSoftObjectPtr<UWidgetsPropertiesDataAsset>(); // Пустой TSoftObjectPtr
 }

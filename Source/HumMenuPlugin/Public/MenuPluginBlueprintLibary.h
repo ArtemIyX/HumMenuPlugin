@@ -19,5 +19,5 @@ public:
 
     // Пример функции, которая возвращает Data Asset для Widget Properties
     UFUNCTION(BlueprintCallable, Category = "Widget Settings")
-    static UWidgetsPropertiesDataAsset* GetWidgetPropertiesDataAsset();
+	static TSoftObjectPtr<UWidgetsPropertiesDataAsset> GetWidgetPropertiesDataAsset();
 };

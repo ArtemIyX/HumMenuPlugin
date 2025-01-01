@@ -3,3 +3,6 @@
 
 #include "WidgetPropertiesSetings.h"
 
+UWidgetPropertiesSetings::UWidgetPropertiesSetings(const FObjectInitializer& ObjectInitializer):Super(ObjectInitializer)
+{
+}
