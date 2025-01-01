@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(Blueprintable)
 class HUMMENUPLUGIN_API UMenuButtonUObject : public UObject
 {
 	GENERATED_BODY()
