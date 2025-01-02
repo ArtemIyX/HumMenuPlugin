@@ -18,10 +18,13 @@ public:
     UButtonPropertiesDataAsset();
     //Click sound var1
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound Data")
-    USoundBase* SoundVar1;
+    USoundBase* PressSound;
 
     // Click sound var2
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound Data")
-    USoundBase* SoundVar2;
+    USoundBase* HoverSound;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Hover Appearance")
+    FSlateColor HoverColor;
 
 };

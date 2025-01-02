@@ -29,7 +29,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")
     TSoftObjectPtr<UButtonPropertiesDataAsset> ButtonProperties;
 
+    // Strength of the menu blur effect
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Appearance")//Menues Blur Strength
+    float MenuBlurStrength;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Appearance")//Menu background color
+    FLinearColor BackgroundMenuColor;
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Main Menu Butons Action") // Array of Button Action Data Assets
     TArray<TSoftObjectPtr<UButtonActionDataAsset>> ButtonActions;
