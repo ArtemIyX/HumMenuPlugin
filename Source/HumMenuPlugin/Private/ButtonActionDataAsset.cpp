@@ -3,3 +3,8 @@
 
 #include "ButtonActionDataAsset.h"
 
+UButtonActionDataAsset::UButtonActionDataAsset()
+{
+
+	AssetType = TEXT("ButtonAction");
+}

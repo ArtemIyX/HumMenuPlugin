@@ -7,6 +7,7 @@
 #include "E_Text_style.h" 
 #include "TextPropertiesDataAsset.h" // Уже существующий класс TextPropertiesDataAsset
 #include "ButtonPropertiesDataAsset.h"
+#include "ButtonActionDataAsset.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 /**
@@ -27,6 +28,11 @@ public:
     // Button properties
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Widget Properties")
     TSoftObjectPtr<UButtonPropertiesDataAsset> ButtonProperties;
+
+
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Main Menu Butons Action") // Array of Button Action Data Assets
+    TArray<TSoftObjectPtr<UButtonActionDataAsset>> ButtonActions;
 
     // Function to get text type
     UFUNCTION(BlueprintCallable)

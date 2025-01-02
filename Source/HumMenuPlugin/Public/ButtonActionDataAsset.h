@@ -1,5 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
+//Data asset to describe action of button
 #pragma once
 
 #include "CoreMinimal.h"
@@ -17,11 +17,12 @@ class HUMMENUPLUGIN_API UButtonActionDataAsset : public UAdvancedDataAsset
 	GENERATED_BODY()
 
 public:
-    // Переменная для текста кнопки
+    UButtonActionDataAsset();
+    // The text of button
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Button")
     FText ButtonText;
 
-    // Переменная для объекта кнопки
+    // Button action UObject
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Button")
-    UMenuButtonUObject* ButtonObject;
+    TSubclassOf<UMenuButtonUObject> ButtonObjectClass;
 };
