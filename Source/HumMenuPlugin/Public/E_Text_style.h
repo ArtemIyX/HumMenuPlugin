@@ -8,8 +8,9 @@
 UENUM(BlueprintType)
 enum class  E_Text_style : uint8
 {
-    NoneVal UMETA(DisplayName = "NoneVal"), // Основной стиль текста
-    TextBase UMETA(DisplayName = "Text Base"), // Основной стиль текста
-    TextTitle UMETA(DisplayName = "Text Title"), // Стиль заголовка
-    TextSmall UMETA(DisplayName = "Text Small")  // Стиль мелкого текста
+    NoneVal UMETA(DisplayName = "NoneVal"), // None valu
+    TextBase UMETA(DisplayName = "Text Base"), // Text style base(for base menues elements)
+    TextTitle UMETA(DisplayName = "Text Title"), // Title text style(for example title for windows )
+    TextSmall UMETA(DisplayName = "Text Small"),  // Small text type(tooltips and other)
+    TextBigTitle UMETA(DisplayName = "Text Big Title")  // Big Title style(for example game name title in main menu)
 };
