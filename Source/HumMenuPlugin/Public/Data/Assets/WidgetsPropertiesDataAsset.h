@@ -33,6 +33,13 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Appearance")
     FLinearColor BackgroundMenuColor;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Appearance")
+    FLinearColor SurfaceMenuElementColor;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widget Appearance")
+    FLinearColor HoveredSurfaceMenuElementColor;
+    
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Main Menu Butons Action") 
     TArray<TSoftObjectPtr<UButtonActionDataAsset>> ButtonActions;
