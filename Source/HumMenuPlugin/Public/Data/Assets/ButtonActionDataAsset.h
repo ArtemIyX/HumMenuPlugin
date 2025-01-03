@@ -4,10 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "Data/AdvancedDataAsset.h"
-#include "MenuButtonUObject.h"
 #include "ButtonActionDataAsset.generated.h"
 
-
+class UMenuButtonCommand;
 /**
  * 
  */
@@ -18,11 +17,12 @@ class HUMMENUPLUGIN_API UButtonActionDataAsset : public UAdvancedDataAsset
 
 public:
     UButtonActionDataAsset();
-    // The text of button
+
+public:
+	
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Button")
     FText ButtonText;
-
-    // Button action UObject
+	
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Button")
-    TSubclassOf<UMenuButtonUObject> ButtonObjectClass;
+    TSoftClassPtr<UMenuButtonCommand> ButtonObjectClass;
 };

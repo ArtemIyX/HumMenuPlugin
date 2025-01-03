@@ -4,20 +4,19 @@
 
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "WidgetsPropertiesDataAsset.h"  // Подключаем Data Asset
-#include "MenuPluginBlueprintLibary.generated.h"
+#include "MenuPluginBlueprintLibrary.generated.h"
 
+class UWidgetsPropertiesDataAsset;
 /**
  * 
  */
 UCLASS()
-class HUMMENUPLUGIN_API UMenuPluginBlueprintLibary : public UBlueprintFunctionLibrary
+class HUMMENUPLUGIN_API UMenuPluginBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 	
 public:
-
-    // Пример функции, которая возвращает Data Asset для Widget Properties
+	
     UFUNCTION(BlueprintCallable, Category = "Widget Settings")
 	static TSoftObjectPtr<UWidgetsPropertiesDataAsset> GetWidgetPropertiesDataAsset();
 };

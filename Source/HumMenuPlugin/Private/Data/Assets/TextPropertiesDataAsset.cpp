@@ -1,9 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "TextPropertiesDataAsset.h"
-
-
+#include "Data/Assets/TextPropertiesDataAsset.h"
 
 
 UTextPropertiesDataAsset::UTextPropertiesDataAsset()
