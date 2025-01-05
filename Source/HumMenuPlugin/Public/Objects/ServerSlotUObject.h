@@ -4,8 +4,9 @@
 #include "UObject/NoExportTypes.h"
 #include "ServerSlotUObject.generated.h"
 
-// Forward declaration для UUserWidget
+// Forward declaration для UUserWidget и APlayerController
 class UUserWidget;
+class APlayerController;
 
 /**
  *
@@ -16,10 +17,10 @@ class HUMMENUPLUGIN_API UServerSlotUObject : public UObject
     GENERATED_BODY()
 
 public:
-    // Объявляем BlueprintNativeEvent с параметром WorldContextObject
+    // Объявляем BlueprintNativeEvent с параметрами WorldContextObject и PlayerController
     UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Server Slot", meta = (WorldContext = "WorldContextObject"))
-    UUserWidget* GetServerSlotWidget(UObject* WorldContextObject);
+    UUserWidget* GetServerSlotWidget(UObject* WorldContextObject, APlayerController* PlayerController);
 
     // Виртуальная реализация функции в C++
-    virtual UUserWidget* GetServerSlotWidget_Implementation(UObject* WorldContextObject);
+    virtual UUserWidget* GetServerSlotWidget_Implementation(UObject* WorldContextObject, APlayerController* PlayerController);
 };
