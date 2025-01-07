@@ -5,11 +5,13 @@
 #include "CoreMinimal.h"
 #include "Data/AdvancedDataAsset.h"
 #include "Data/HumMenuTypes.h"
+#include "Data/Assets/MenuScrollsSettings.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 class UButtonPropertiesDataAsset;
 class UButtonActionDataAsset;
 class UTextPropertiesDataAsset;
+
 /**
  *
  */
@@ -43,6 +45,11 @@ public:
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Main Menu Butons Action") 
     TArray<TSoftObjectPtr<UButtonActionDataAsset>> ButtonActions;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings")
+    UMenuScrollsSettings* ScrollSetting;
+
+
 
 public:
     UFUNCTION(BlueprintCallable)
