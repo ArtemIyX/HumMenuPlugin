@@ -6,6 +6,7 @@
 #include "Data/AdvancedDataAsset.h"
 #include "Data/HumMenuTypes.h"
 #include "Data/Assets/MenuScrollsSettings.h"
+#include "Data/Assets/TextBoxPropertiesDataAsset.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 class UButtonPropertiesDataAsset;
@@ -48,6 +49,9 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings")
     UMenuScrollsSettings* ScrollSetting;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Text Box Properties")
+    UTextBoxPropertiesDataAsset* TextBoxProperties;
 
 
 
