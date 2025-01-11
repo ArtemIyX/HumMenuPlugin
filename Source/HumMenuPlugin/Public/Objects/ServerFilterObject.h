@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "Delegates/DelegateCombinations.h"
 #include "ServerFilterObject.generated.h"
 
 class UUserWidget;
@@ -25,4 +26,12 @@ public:
     // Свойство для хранения класса виджета
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "UI")
     TSubclassOf<UUserWidget> WidgetClass;
+
+
+
+    // Ивент-диспетчер для обновления фильтра сервера
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUpdateServerFilter);
+
+    UPROPERTY(BlueprintAssignable, Category = "Server Filter")
+    FOnUpdateServerFilter OnUpdateServerFilter;
 };
