@@ -19,7 +19,6 @@ public:
     UButtonActionDataAsset();
 
 public:
-	
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Button")
     FText ButtonText;
 	

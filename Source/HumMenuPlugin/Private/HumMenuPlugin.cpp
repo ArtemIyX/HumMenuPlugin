@@ -2,6 +2,8 @@
 
 #include "HumMenuPlugin.h"
 
+DEFINE_LOG_CATEGORY(LogHumMenu);
+
 #define LOCTEXT_NAMESPACE "FHumMenuPluginModule"
 
 void FHumMenuPluginModule::StartupModule()

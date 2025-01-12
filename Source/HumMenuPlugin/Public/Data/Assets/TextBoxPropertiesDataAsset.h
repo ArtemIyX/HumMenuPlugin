@@ -4,9 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Data/AdvancedDataAsset.h"
-//#include "SlateWidgetStyleContainerBase.h"
-//#include "SlateWidgetStyleAsset.h"
-//#include "SlateWidgetStyle.h"
 #include "TextBoxPropertiesDataAsset.generated.h"
 
 /**

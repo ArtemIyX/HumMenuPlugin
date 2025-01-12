@@ -4,6 +4,8 @@
 
 #include "Modules/ModuleManager.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogHumMenu, Log, All);
+
 class FHumMenuPluginModule : public IModuleInterface
 {
 public:

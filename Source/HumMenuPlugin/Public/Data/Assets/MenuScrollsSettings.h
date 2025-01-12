@@ -18,12 +18,12 @@ class HUMMENUPLUGIN_API UMenuScrollsSettings : public UAdvancedDataAsset
 public:
 	UMenuScrollsSettings();
 	// ScrollBar style variable for Menu
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings") //Scroll bar style
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings")
 	FScrollBarStyle MenuScrollBar;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings")//Scroll bar thickness parameter
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings")
 	float MenuScrollThickness;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings")// Scroll inside padding
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Scroll Settings")
 	FMargin MenuScrollPadding;
 };

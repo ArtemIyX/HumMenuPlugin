@@ -1,50 +1,58 @@
 #include "Objects/ServerFilterObject.h"
+
+#include "HumMenuPlugin.h"
 #include "Blueprint/UserWidget.h"
 #include "Engine/Engine.h"
 #include "GameFramework/PlayerController.h"
 
-UUserWidget* UServerFilterObject::GetServerFilterWidget_Implementation(UObject* WorldContextObject, APlayerController* PlayerController)
+
+
+UServerFilterObject::UServerFilterObject(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
-    if (!WorldContextObject)
+    WidgetClass = UUserWidget::StaticClass();
+}
+
+UUserWidget* UServerFilterObject::GetServerFilterWidget_Implementation(UObject* WorldContextObject, APlayerController* InPlayerController)
+{
+    if (!IsValid(WorldContextObject))
     {
-        UE_LOG(LogTemp, Warning, TEXT("WorldContextObject is invalid!"));
+        UE_LOG(LogHumMenu, Warning, TEXT("%s WorldContextObject is invalid!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
-    if (!PlayerController)
+    if (!IsValid(InPlayerController))
     {
-        UE_LOG(LogTemp, Warning, TEXT("PlayerController is invalid!"));
+        UE_LOG(LogHumMenu, Warning, TEXT("%s PlayerController is invalid!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
-    UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull);
-    if (!World)
+    UWorld* world = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull);
+    if (!world)
     {
-        UE_LOG(LogTemp, Warning, TEXT("World is invalid!"));
+        UE_LOG(LogHumMenu, Warning, TEXT("%s World is invalid!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
     if (!WidgetClass)
     {
-        UE_LOG(LogTemp, Warning, TEXT("WidgetClass is not set!"));
+        UE_LOG(LogHumMenu, Warning, TEXT("%s WidgetClass is not set!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
-    UUserWidget* Widget = CreateWidget<UUserWidget>(World, WidgetClass);
-    if (!Widget)
+    UUserWidget* widget = CreateWidget<UUserWidget>(InPlayerController, WidgetClass);
+    if (!IsValid(widget))
     {
-        UE_LOG(LogTemp, Warning, TEXT("Failed to create widget!"));
+        UE_LOG(LogHumMenu, Warning, TEXT("%s Failed to create widget!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
-    return Widget;
+    return widget;
 }
 
-
-void UServerFilterObject::CallUpdateServerFilter(UServerFilterObject* CurrentObject)
+void UServerFilterObject::CallUpdateServerFilter(UServerFilterObject* InCurrentObject)
 {
     if (OnUpdateServerFilter.IsBound()) 
     {
-        OnUpdateServerFilter.Broadcast(CurrentObject); 
+        OnUpdateServerFilter.Broadcast(InCurrentObject); 
     }
 }
