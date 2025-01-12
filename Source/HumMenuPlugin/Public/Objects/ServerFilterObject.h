@@ -30,8 +30,13 @@ public:
 
 
     // Ивент-диспетчер для обновления фильтра сервера
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnUpdateServerFilter);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUpdateServerFilter, UServerFilterObject*, CurrentObject);
 
     UPROPERTY(BlueprintAssignable, Category = "Server Filter")
     FOnUpdateServerFilter OnUpdateServerFilter;
+
+    // Функция для вызова диспетчера с параметром
+    UFUNCTION(BlueprintCallable, Category = "Server Filter")
+    void CallUpdateServerFilter(UServerFilterObject* CurrentObject);
+
 };

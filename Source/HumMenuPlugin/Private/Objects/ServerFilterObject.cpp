@@ -39,3 +39,12 @@ UUserWidget* UServerFilterObject::GetServerFilterWidget_Implementation(UObject* 
 
     return Widget;
 }
+
+
+void UServerFilterObject::CallUpdateServerFilter(UServerFilterObject* CurrentObject)
+{
+    if (OnUpdateServerFilter.IsBound()) 
+    {
+        OnUpdateServerFilter.Broadcast(CurrentObject); 
+    }
+}
