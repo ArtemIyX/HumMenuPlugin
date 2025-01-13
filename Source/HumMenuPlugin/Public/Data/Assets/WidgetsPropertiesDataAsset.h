@@ -7,6 +7,7 @@
 #include "Data/HumMenuTypes.h"
 #include "Data/Assets/MenuScrollsSettings.h"
 #include "Data/Assets/TextBoxPropertiesDataAsset.h"
+#include "Data/Assets/CheckBoxPropertiesDataAsset.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 class UButtonPropertiesDataAsset;
@@ -52,6 +53,9 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Text Box Properties")
     UTextBoxPropertiesDataAsset* TextBoxProperties;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Properties")
+    UCheckBoxPropertiesDataAsset* CheckBoxProperties;
 
 
 
