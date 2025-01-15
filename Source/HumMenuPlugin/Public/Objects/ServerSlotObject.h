@@ -38,4 +38,8 @@ public:
 	 */
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Server Slot", meta = (WorldContext = "WorldContextObject"))
 	UUserWidget* GetServerSlotWidget(UObject* WorldContextObject, APlayerController* InPlayerController);
+
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Server Info", meta = (WorldContext = "WorldContextObject"))
+	UUserWidget* GetServerInfoWidget(UObject* WorldContextObject, APlayerController* InPlayerController);
 };

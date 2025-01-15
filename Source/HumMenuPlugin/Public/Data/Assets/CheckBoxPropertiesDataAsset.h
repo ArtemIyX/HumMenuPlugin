@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Data/AdvancedDataAsset.h"
-#include "Styling/SlateWidgetStyle.h" // Для работы с FCheckBoxStyle
-#include "Styling/SlateTypes.h"       // Для стилей виджетов
+#include "Styling/SlateWidgetStyle.h" 
+#include "Styling/SlateTypes.h"       
 #include "CheckBoxPropertiesDataAsset.generated.h"
 
 
