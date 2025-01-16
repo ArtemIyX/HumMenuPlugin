@@ -39,4 +39,13 @@ public:
 	 */
 	UFUNCTION(BlueprintCallable, Category="ListView")
 	void SetEntryWidgetClass(UPARAM(DisplayName="User Entry Widget Class") TSubclassOf<UUserWidget> InClass);
+
+	UFUNCTION(BlueprintCallable, Category="ListView")
+	void SetScrollbarStyle(UPARAM(DisplayName="Style") const FScrollBarStyle& InScrollBarStyle);
+
+	UFUNCTION(BlueprintCallable, Category="ListView")
+	void SetWidgetStyle(UPARAM(DisplayName="Style") const FTableViewStyle& InTableWidgetStyle);
+
+	UFUNCTION(BlueprintCallable, Category="ListView")
+	void SetOrientation(UPARAM(DisplayName="Orientation") TEnumAsByte<EOrientation> InOrientation);
 };

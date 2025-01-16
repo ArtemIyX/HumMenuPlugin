@@ -11,3 +11,18 @@ void UCustomMenuListView::SetEntryWidgetClass(TSubclassOf<UUserWidget> InClass)
 {
 	EntryWidgetClass = InClass;
 }
+
+void UCustomMenuListView::SetScrollbarStyle(const FScrollBarStyle& InScrollBarStyle)
+{
+	ScrollBarStyle = InScrollBarStyle;
+}
+
+void UCustomMenuListView::SetWidgetStyle(const FTableViewStyle& InTableWidgetStyle)
+{
+	WidgetStyle = InTableWidgetStyle;
+}
+
+void UCustomMenuListView::SetOrientation(TEnumAsByte<EOrientation> InOrientation)
+{
+	Orientation = InOrientation;
+}
