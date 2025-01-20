@@ -20,9 +20,8 @@ public:
 	UOptionsBlockObject(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    FText OptionsBlockName;
+    FText BlockName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<TSubclassOf<UOptionObject>> OptionsObjects;
-	UOptionsBlockObject();
+	TArray<TSubclassOf<UOptionObject>> OptionClasses;
 };
