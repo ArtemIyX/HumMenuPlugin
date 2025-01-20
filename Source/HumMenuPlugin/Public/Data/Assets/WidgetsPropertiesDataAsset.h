@@ -8,6 +8,7 @@
 #include "Data/Assets/MenuScrollsSettings.h"
 #include "Data/Assets/TextBoxPropertiesDataAsset.h"
 #include "Data/Assets/CheckBoxPropertiesDataAsset.h"
+#include "Data/Assets/SliderPropertiesDataAsset.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 class UButtonPropertiesDataAsset;
@@ -56,6 +57,9 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Check Box Properties")
     UCheckBoxPropertiesDataAsset* CheckBoxProperties;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Slider Properties")
+    USliderPropertiesDataAsset* SliderProperties;
 
 
 
