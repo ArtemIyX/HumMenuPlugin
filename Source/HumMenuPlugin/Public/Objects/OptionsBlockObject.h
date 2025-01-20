@@ -10,17 +10,19 @@
 /**
  * 
  */
-UCLASS(BlueprintType)
+UCLASS(Blueprintable, BlueprintType)
 class HUMMENUPLUGIN_API UOptionsBlockObject : public UObject
 {
 	GENERATED_BODY()
 	
 
 public:
+	UOptionsBlockObject(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Options")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
     FText OptionsBlockName;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Options")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TSubclassOf<UOptionObject>> OptionsObjects;
+	UOptionsBlockObject();
 };

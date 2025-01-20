@@ -3,3 +3,7 @@
 
 #include "Objects/OptionsBlockObject.h"
 
+UOptionsBlockObject::UOptionsBlockObject(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+{
+
+}
