@@ -61,3 +61,12 @@ UUserWidget* UServerSlotObject::GetServerInfoWidget_Implementation(UObject* Worl
 	// TODO: Add logic to retrieve the server info widget
 	return nullptr;
 }
+
+
+void UServerSlotObject::CallOnSlotClicked(UServerSlotObject* InCurrentObject, UUserWidget* ClickedWidget)
+{
+	if (OnSlotClicked.IsBound())
+	{
+		OnSlotClicked.Broadcast(InCurrentObject, ClickedWidget);
+	}
+}

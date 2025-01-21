@@ -14,6 +14,9 @@ class APlayerController;
  * to retrieve a server slot widget in a user interface. It is intended to be
  * used with Blueprints
  */
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSlotClicked, UServerSlotObject*, CurrentObject, UUserWidget*, ClickedWidget);
+
 UCLASS(Blueprintable, BlueprintType, meta = (ShowWorldContextPin))
 class HUMMENUPLUGIN_API UServerSlotObject : public UObject
 {
@@ -42,4 +45,14 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Server Info", meta = (WorldContext = "WorldContextObject"))
 	UUserWidget* GetServerInfoWidget(UObject* WorldContextObject, APlayerController* InPlayerController);
+
+
+	UFUNCTION(BlueprintCallable, Category = "Server Filter")
+	virtual void CallOnSlotClicked(UServerSlotObject* InCurrentObject, UUserWidget* ClickedWidget);
+
+public:
+
+
+	UPROPERTY(BlueprintAssignable, Category = "Server Filter")
+	FOnSlotClicked OnSlotClicked;
 };
