@@ -6,5 +6,5 @@
 
 UTextPropertiesDataAsset::UTextPropertiesDataAsset()
 {
-	AssetType = TEXT("TextPropertiess");
+	AssetType = TEXT("TextProperties");
 }
