@@ -48,7 +48,7 @@ public:
 
 
 	UFUNCTION(BlueprintCallable, Category = "Server Filter")
-	virtual void CallOnSlotClicked(UServerSlotObject* InCurrentObject, UUserWidget* ClickedWidget);
+	virtual void CallOnSlotClicked(UUserWidget* ClickedWidget);
 
 public:
 

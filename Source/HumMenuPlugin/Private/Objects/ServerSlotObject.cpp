@@ -63,10 +63,10 @@ UUserWidget* UServerSlotObject::GetServerInfoWidget_Implementation(UObject* Worl
 }
 
 
-void UServerSlotObject::CallOnSlotClicked(UServerSlotObject* InCurrentObject, UUserWidget* ClickedWidget)
+void UServerSlotObject::CallOnSlotClicked(UUserWidget* ClickedWidget)
 {
 	if (OnSlotClicked.IsBound())
 	{
-		OnSlotClicked.Broadcast(InCurrentObject, ClickedWidget);
+		OnSlotClicked.Broadcast(this, ClickedWidget);
 	}
 }
