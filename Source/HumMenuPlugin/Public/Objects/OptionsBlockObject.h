@@ -10,7 +10,11 @@
 /**
  * 
  */
-UCLASS(Blueprintable, BlueprintType)
+
+class UUserWidget;
+class APlayerController;
+
+UCLASS(Blueprintable, BlueprintType, meta = (ShowWorldContextPin))
 class HUMMENUPLUGIN_API UOptionsBlockObject : public UObject
 {
 	GENERATED_BODY()
@@ -24,4 +28,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TSubclassOf<UOptionObject>> OptionClasses;
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
+	UUserWidget* GetOptionsBlockWidget(UObject* WorldContextObject, APlayerController* InPlayerController);
 };

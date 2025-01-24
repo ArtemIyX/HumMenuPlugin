@@ -3,3 +3,7 @@
 
 #include "Objects/WindowOfSettingsObject.h"
 
+UWindowOfSettingsObject::UWindowOfSettingsObject(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+{
+
+}
