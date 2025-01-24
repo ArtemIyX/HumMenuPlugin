@@ -4,17 +4,21 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "Objects/OptionsBlockObject.h"
 #include "WindowOfSettingsObject.generated.h"
 
 /**
  * 
  */
-UCLASS()
+UCLASS(Blueprintable)
 class HUMMENUPLUGIN_API UWindowOfSettingsObject : public UObject
 {
 	GENERATED_BODY()
 	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText BlockName;
+	FText WindowName;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<UOptionsBlockObject*> OptionsBlocks;
 };
