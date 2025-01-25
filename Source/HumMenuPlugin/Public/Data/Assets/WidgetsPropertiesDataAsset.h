@@ -10,6 +10,7 @@
 #include "Data/Assets/CheckBoxPropertiesDataAsset.h"
 #include "Data/Assets/SliderPropertiesDataAsset.h"
 #include "Data/Assets/OptionMenuParametersDataAsset.h"
+#include "Data/Assets/OptionStyleDataAsset.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 class UButtonPropertiesDataAsset;
@@ -64,6 +65,10 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OptionsMenuProperties")
     UOptionMenuParametersDataAsset* OptionsDataAsset;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OptionsMenuProperties")
+    UOptionStyleDataAsset* OptionStyle;
+
 
 
 
