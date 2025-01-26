@@ -16,33 +16,33 @@ UUserWidget* UServerFilterObject::GetServerFilterWidget_Implementation(UObject* 
 {
     if (!IsValid(WorldContextObject))
     {
-        UE_LOG(LogHumMenu, Warning, TEXT("%s WorldContextObject is invalid!"), TEXT(__FUNCTION__));
+       // UE_LOG(LogHumMenu, Warning, TEXT("%s WorldContextObject is invalid!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
     if (!IsValid(InPlayerController))
     {
-        UE_LOG(LogHumMenu, Warning, TEXT("%s PlayerController is invalid!"), TEXT(__FUNCTION__));
+       // UE_LOG(LogHumMenu, Warning, TEXT("%s PlayerController is invalid!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
     UWorld* world = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull);
     if (!world)
     {
-        UE_LOG(LogHumMenu, Warning, TEXT("%s World is invalid!"), TEXT(__FUNCTION__));
+        //UE_LOG(LogHumMenu, Warning, TEXT("%s World is invalid!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
     if (!WidgetClass)
     {
-        UE_LOG(LogHumMenu, Warning, TEXT("%s WidgetClass is not set!"), TEXT(__FUNCTION__));
+        //UE_LOG(LogHumMenu, Warning, TEXT("%s WidgetClass is not set!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
     UUserWidget* widget = CreateWidget<UUserWidget>(InPlayerController, WidgetClass);
     if (!IsValid(widget))
     {
-        UE_LOG(LogHumMenu, Warning, TEXT("%s Failed to create widget!"), TEXT(__FUNCTION__));
+       // UE_LOG(LogHumMenu, Warning, TEXT("%s Failed to create widget!"), TEXT(__FUNCTION__));
         return nullptr;
     }
 
