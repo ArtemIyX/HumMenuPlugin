@@ -24,6 +24,9 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Option", meta = (WorldContext = "WorldContextObject"))
 	UUserWidget* GetOptionWidget(UObject* WorldContextObject, APlayerController* InPlayerController);
 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Option", meta = (WorldContext = "WorldContextObject"))
+	UUserWidget* CreateOptionWidget(UObject* WorldContextObject, APlayerController* InPlayerController, UUserWidget* InputWidget);
+
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FText OptionName;
 
