@@ -41,7 +41,8 @@ public class HumMenuPlugin : ModuleRules
 				"DeveloperSettings",
 				"UMG",
 				"Slate",
-				"SlateCore"
+				"SlateCore",
+                "InputCore"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
