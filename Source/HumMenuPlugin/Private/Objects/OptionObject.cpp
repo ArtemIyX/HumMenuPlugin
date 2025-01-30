@@ -2,6 +2,8 @@
 
 
 #include "Objects/OptionObject.h"
+#include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
 
 #include "HumMenuPlugin.h"
 
@@ -64,4 +66,44 @@ UUserWidget* UOptionObject::CreateOptionWidget_Implementation(UObject* WorldCont
 
 
 	return nullptr;
+}
+
+
+
+UUserWidget* UOptionObject::CreateCustomWidget(UObject* WorldContextObject, TSubclassOf<UUserWidget> WidgetClass, APlayerController* InPlayerController)
+{
+	if (!IsValid(WorldContextObject) || !IsValid(WidgetClass))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%s: Invalid parameters!"), *FString(__func__));
+		return nullptr;
+	}
+
+	// Получаем мир из контекста (лучший способ)
+	UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull);
+	if (!IsValid(World))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%s: Could not get valid World!"), *FString(__func__));
+		return nullptr;
+	}
+
+	// Если контроллер не передан, берём первого
+	if (!IsValid(InPlayerController))
+	{
+		InPlayerController = World->GetFirstPlayerController();
+		if (!IsValid(InPlayerController))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("%s: No valid PlayerController found!"), *FString(__func__));
+			return nullptr;
+		}
+	}
+
+	// Создаём виджет с правильным типом
+	UUserWidget* CreatedWidget = CreateWidget<UUserWidget>(InPlayerController, WidgetClass);
+	if (!IsValid(CreatedWidget))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("%s: Failed to create widget!"), *FString(__func__));
+		return nullptr;
+	}
+
+	return CreatedWidget; // Просто создаём и возвращаем, НЕ добавляя в Viewport
 }
