@@ -11,6 +11,7 @@
 
 class UUserWidget;
 class APlayerController;
+class UActorComponent;
 
 
 UCLASS(Blueprintable, BlueprintType)
@@ -19,7 +20,7 @@ UCLASS(Blueprintable, BlueprintType)
 class HUMMENUPLUGIN_API UOptionObject : public UObject
 {
 	GENERATED_BODY()
-	
+
 public:
 	UOptionObject(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
@@ -30,13 +31,19 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Option", meta = (WorldContext = "WorldContextObject"), meta = (WorldContext = "WorldContextObject", ShowWorldContextPin))
 	UUserWidget* CreateOptionWidget(UObject* WorldContextObject, APlayerController* InPlayerController, UUserWidget* InputWidget);
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
 	FText OptionName;
+
 
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TSubclassOf<UUserWidget> OptionWidget;
 
-	UFUNCTION(BlueprintCallable, Category = "UI", meta = (WorldContext = "WorldContextObject", ShowWorldContextPin, DeterminesOutputType = "WidgetClass", ExposeOnSpawn = "WidgetClass"))
-	static UUserWidget* CreateCustomWidget(UObject* WorldContextObject, TSubclassOf<UUserWidget> WidgetClass, APlayerController* InPlayerController);
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Option", meta = (ExposeOnSpawn = "true"))
+	UActorComponent* WorldOwner;
+
+	UFUNCTION(BlueprintCallable, Category = "Option")
+	UUserWidget* CreateNewWidget(APlayerController* InPlayerController, TSubclassOf<UUserWidget> WidgetClass);
+
+
 };

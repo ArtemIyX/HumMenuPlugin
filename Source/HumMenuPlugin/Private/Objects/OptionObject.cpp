@@ -13,7 +13,7 @@ UOptionObject::UOptionObject(const FObjectInitializer& ObjectInitializer) : Supe
 
 
 UUserWidget* UOptionObject::GetOptionWidget_Implementation(UObject* WorldContextObject,
-                                                           APlayerController* InPlayerController)
+	APlayerController* InPlayerController)
 {
 	if (!IsValid(WorldContextObject))
 	{
@@ -70,40 +70,31 @@ UUserWidget* UOptionObject::CreateOptionWidget_Implementation(UObject* WorldCont
 
 
 
-UUserWidget* UOptionObject::CreateCustomWidget(UObject* WorldContextObject, TSubclassOf<UUserWidget> WidgetClass, APlayerController* InPlayerController)
+UUserWidget* UOptionObject::CreateNewWidget(APlayerController* InPlayerController, TSubclassOf<UUserWidget> WidgetClass)
 {
-	if (!IsValid(WorldContextObject) || !IsValid(WidgetClass))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("%s: Invalid parameters!"), *FString(__func__));
-		return nullptr;
-	}
-
-	// Получаем мир из контекста (лучший способ)
-	UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull);
-	if (!IsValid(World))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("%s: Could not get valid World!"), *FString(__func__));
-		return nullptr;
-	}
-
-	// Если контроллер не передан, берём первого
 	if (!IsValid(InPlayerController))
 	{
-		InPlayerController = World->GetFirstPlayerController();
-		if (!IsValid(InPlayerController))
-		{
-			UE_LOG(LogTemp, Warning, TEXT("%s: No valid PlayerController found!"), *FString(__func__));
-			return nullptr;
-		}
-	}
-
-	// Создаём виджет с правильным типом
-	UUserWidget* CreatedWidget = CreateWidget<UUserWidget>(InPlayerController, WidgetClass);
-	if (!IsValid(CreatedWidget))
-	{
-		UE_LOG(LogTemp, Warning, TEXT("%s: Failed to create widget!"), *FString(__func__));
+		UE_LOG(LogHumMenu, Warning, TEXT("CreateNewWidget: PlayerController is invalid!"));
 		return nullptr;
 	}
 
-	return CreatedWidget; // Просто создаём и возвращаем, НЕ добавляя в Viewport
+	if (!IsValid(WidgetClass))
+	{
+		UE_LOG(LogHumMenu, Warning, TEXT("CreateNewWidget: WidgetClass is invalid!"));
+		return nullptr;
+	}
+
+	
+	UUserWidget* NewWidget = CreateWidget<UUserWidget>(InPlayerController, WidgetClass);
+	if (!IsValid(NewWidget))
+	{
+		UE_LOG(LogHumMenu, Warning, TEXT("CreateNewWidget: Failed to create widget!"));
+		return nullptr;
+	}
+
+	
+
+
+	return NewWidget;
 }
+
