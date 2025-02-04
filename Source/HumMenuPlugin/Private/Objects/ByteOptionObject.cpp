@@ -3,3 +3,14 @@
 
 #include "Objects/ByteOptionObject.h"
 
+
+void UByteOptionObject::CallOnByteOptionUpdate(UOptionObject* OptionObject, uint8 Value)
+{
+
+    if (OnByteOptionUpdate.IsBound())
+    {
+
+        OnByteOptionUpdate.Broadcast(OptionObject, Value);
+    }
+}
+
