@@ -20,7 +20,7 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Events")
 	FOnFloatOptionUpdate OnFloatOptionUpdate;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
 	float CurrentValue;
 
 
