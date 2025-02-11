@@ -34,6 +34,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
 	FText OptionName;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
+	FName OptionID;
+
 
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
