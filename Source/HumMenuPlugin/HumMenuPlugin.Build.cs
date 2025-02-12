@@ -25,7 +25,7 @@ public class HumMenuPlugin : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "AdvancedAsset",
+				"Core", "AdvancedAsset","InputCore",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -42,7 +42,7 @@ public class HumMenuPlugin : ModuleRules
 				"UMG",
 				"Slate",
 				"SlateCore",
-                "InputCore"
+                "InputCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

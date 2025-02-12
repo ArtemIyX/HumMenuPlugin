@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Data/AdvancedDataAsset.h"
+#include "Data/Structures/KeyOptionData.h"
 #include "BindingMappingsDataAsset.generated.h"
 
 /**
@@ -15,8 +16,10 @@ class HUMMENUPLUGIN_API UBindingMappingsDataAsset : public UAdvancedDataAsset
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TArray<FName> BindingMappings;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Key Options")
+	TArray<FKeyOptionData> BindingMappings;
 
 	UBindingMappingsDataAsset();
 };

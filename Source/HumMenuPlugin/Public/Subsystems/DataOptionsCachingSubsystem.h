@@ -40,9 +40,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	UOptionObject* GetObject(const FName OptionID) const
 	{
-		if (UOptionObject* const* FoundOption = CachedOptions.Find(OptionID)) // Используем UOptionObject* const*
+		if (UOptionObject* const* FoundOption = CachedOptions.Find(OptionID)) 
 		{
-			return *FoundOption; // Разыменовываем только если не nullptr
+			return *FoundOption; 
 		}
 		return nullptr;
 	}
