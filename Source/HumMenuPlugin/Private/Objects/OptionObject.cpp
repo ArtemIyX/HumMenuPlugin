@@ -2,6 +2,8 @@
 
 
 #include "Objects/OptionObject.h"
+#include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
 
 #include "HumMenuPlugin.h"
 
@@ -11,7 +13,7 @@ UOptionObject::UOptionObject(const FObjectInitializer& ObjectInitializer) : Supe
 
 
 UUserWidget* UOptionObject::GetOptionWidget_Implementation(UObject* WorldContextObject,
-                                                           APlayerController* InPlayerController)
+	APlayerController* InPlayerController)
 {
 	if (!IsValid(WorldContextObject))
 	{
@@ -65,3 +67,34 @@ UUserWidget* UOptionObject::CreateOptionWidget_Implementation(UObject* WorldCont
 
 	return nullptr;
 }
+
+
+
+UUserWidget* UOptionObject::CreateNewWidget(APlayerController* InPlayerController, TSubclassOf<UUserWidget> WidgetClass)
+{
+	if (!IsValid(InPlayerController))
+	{
+		UE_LOG(LogHumMenu, Warning, TEXT("CreateNewWidget: PlayerController is invalid!"));
+		return nullptr;
+	}
+
+	if (!IsValid(WidgetClass))
+	{
+		UE_LOG(LogHumMenu, Warning, TEXT("CreateNewWidget: WidgetClass is invalid!"));
+		return nullptr;
+	}
+
+	
+	UUserWidget* NewWidget = CreateWidget<UUserWidget>(InPlayerController, WidgetClass);
+	if (!IsValid(NewWidget))
+	{
+		UE_LOG(LogHumMenu, Warning, TEXT("CreateNewWidget: Failed to create widget!"));
+		return nullptr;
+	}
+
+	
+
+
+	return NewWidget;
+}
+

@@ -31,4 +31,13 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
 	UUserWidget* GetOptionsBlockWidget(UObject* WorldContextObject, APlayerController* InPlayerController);
+
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Options")
+	void AddOptions(const TArray<UOptionObject*>& OptionObjects, UObject* WorldContextObject, APlayerController* InPlayerController);
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Options")
+	void GenerateOptions(UObject* WorldContextObject, APlayerController* InPlayerController, TArray<UOptionObject*>& OutOptions);
+
+
 };
