@@ -23,6 +23,16 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
 	float CurrentValue;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
+	float MinVal;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
+	float MaxVal;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
+	float SliderStep;
+
+
 
 	UFUNCTION(BlueprintCallable, Category = "Events")
 	void CallOnFloatOptionUpdate(UOptionObject* OptionObject, float Value);
