@@ -25,7 +25,7 @@ public class HumMenuPlugin : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", "AdvancedAsset","InputCore",
+				"Core", "AdvancedAsset","InputCore","EnhancedInput"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

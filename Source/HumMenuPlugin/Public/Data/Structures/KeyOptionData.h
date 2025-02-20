@@ -1,7 +1,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "InputAction.h"
+
+#include "EnhancedInputComponent.h"
 #include "KeyOptionData.generated.h"
+
+
 
 /**
  * 
@@ -13,16 +18,18 @@ struct HUMMENUPLUGIN_API FKeyOptionData
 
 public:
    
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Key Options")
-    FName MappingName;
+
 
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Key Options")
     FText KeyOptionName;
 
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Key Options")
+    UInputAction* CurrentInputAction;
+
     FKeyOptionData()
-        : MappingName(NAME_None), KeyOptionName(FText::FromString("Default Option"))
+        : KeyOptionName(FText::FromString("Default Option")), CurrentInputAction(nullptr)
     {
     }
 };

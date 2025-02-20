@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 #include "Objects/OptionObject.h"
 #include "InputCoreTypes.h"
+#include "InputAction.h"
+
+#include "EnhancedInputComponent.h"
 #include "KeyOptionObject.generated.h"
 
 
@@ -25,6 +28,10 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
 	FKey CurrentKey;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
+	UInputAction* CurrentInputAction;
+
 
 	UFUNCTION(BlueprintCallable, Category = "Events")
 	void CallOnKeyOptionUpdate(UOptionObject* OptionObject, FKey Value);
