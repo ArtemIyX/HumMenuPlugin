@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Objects/OptionObject.h"
 #include "InputCoreTypes.h"
-#include "InputAction.h"
+
 
 #include "EnhancedInputComponent.h"
 #include "KeyOptionObject.generated.h"
@@ -30,7 +30,7 @@ public:
 	FKey CurrentKey;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta = (ExposeOnSpawn = "true"))
-	UInputAction* CurrentInputAction;
+	FName MappingName;
 
 
 	UFUNCTION(BlueprintCallable, Category = "Events")
