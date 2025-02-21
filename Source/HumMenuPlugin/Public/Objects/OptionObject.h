@@ -42,8 +42,7 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TSubclassOf<UUserWidget> OptionWidget;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Option", meta = (ExposeOnSpawn = "true"))
-	UActorComponent* WorldOwner;
+
 
 	UFUNCTION(BlueprintCallable, Category = "Option")
 	UUserWidget* CreateNewWidget(APlayerController* InPlayerController, TSubclassOf<UUserWidget> WidgetClass);
