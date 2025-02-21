@@ -3,7 +3,16 @@
 #include "Data/Assets/WidgetsPropertiesDataAsset.h"
 #include "Data/Assets/TextPropertiesDataAsset.h"
 
-UWidgetsPropertiesDataAsset::UWidgetsPropertiesDataAsset(): MenuBlurStrength(0), BackgroundMenuColor()
+UWidgetsPropertiesDataAsset::UWidgetsPropertiesDataAsset(): MenuBlurStrength(0), BackgroundMenuColor(),
+                                                            SurfaceMenuElementColor(),
+                                                            HoveredSurfaceMenuElementColor(),
+                                                            ScrollSetting(nullptr),
+                                                            TextBoxProperties(nullptr),
+                                                            CheckBoxProperties(nullptr),
+                                                            SliderProperties(nullptr),
+                                                            OptionsDataAsset(nullptr),
+                                                            OptionStyle(nullptr),
+                                                            BindingMappings(nullptr)
 {
 	ButtonProperties = nullptr;
 	AssetType = TEXT("WidgetsProperties");
