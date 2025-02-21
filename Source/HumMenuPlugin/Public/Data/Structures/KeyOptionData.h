@@ -21,15 +21,14 @@ public:
 
 
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Key Options")
-    FText KeyOptionName;
+
 
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Key Options")
     UInputAction* CurrentInputAction;
 
     FKeyOptionData()
-        : KeyOptionName(FText::FromString("Default Option")), CurrentInputAction(nullptr)
+        :  CurrentInputAction(nullptr)
     {
     }
 };
