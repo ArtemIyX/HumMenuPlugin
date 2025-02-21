@@ -25,6 +25,10 @@
 		{
 			"Name": "AdvancedAsset",
 			"Enabled": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
 		}
 	]
 }
