@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "Objects/OptionObject.h"
+#include "Objects/OptionsBlockObject.h"
 
 
 #include "DataOptionsCachingSubsystem.generated.h"
@@ -21,8 +22,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TMap<FName, UOptionObject*> CachedOptions;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TMap<FName, UOptionsBlockObject*> CachedBlocks;
+
 	UFUNCTION(BlueprintCallable)
 	TMap<FName, UOptionObject*> GetCachingOptionsData() const { return CachedOptions; }
+
+	UFUNCTION(BlueprintCallable)
+	TMap<FName, UOptionsBlockObject*> GetCachingBlocksData() const { return CachedBlocks; }
 
 	UFUNCTION(BlueprintCallable)
 	void AddOptionCache(const TArray<UOptionObject*>& Options)
@@ -47,6 +54,28 @@ public:
 		return nullptr;
 	}
 
+	UFUNCTION(BlueprintCallable)
+	UOptionsBlockObject* GetBlock(const FName BlockID) const
+	{
+		if (UOptionsBlockObject* const* FoundBlock = CachedBlocks.Find(BlockID))
+		{
+			return *FoundBlock;
+		}
+		return nullptr;
+	}
+
+
+	UFUNCTION(BlueprintCallable)
+	void AddBlockCache(const TArray<UOptionsBlockObject*>& Blocks)
+	{
+		for (UOptionsBlockObject* Block : Blocks)  
+		{
+			if (Block && !Block->BlockID.IsNone())  
+			{
+				CachedBlocks.Add(Block->BlockID, Block);  
+			}
+		}
+	}
 
 
 

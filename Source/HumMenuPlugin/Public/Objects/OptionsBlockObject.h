@@ -27,6 +27,9 @@ public:
     FText BlockName;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FName BlockID;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TSubclassOf<UOptionObject>> OptionClasses;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, meta = (WorldContext = "WorldContextObject"))

@@ -12,6 +12,7 @@
 #include "Data/Assets/OptionMenuParametersDataAsset.h"
 #include "Data/Assets/OptionStyleDataAsset.h"
 #include "Data/Assets/BindingMappingsDataAsset.h"
+#include "Data/Assets/MessageBoxStyle.h"
 #include "WidgetsPropertiesDataAsset.generated.h"
 
 class UButtonPropertiesDataAsset;
@@ -72,6 +73,9 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "OptionsMenuProperties")
     UBindingMappingsDataAsset* BindingMappings;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox Style")
+    UMessageBoxStyle* MessageBoxDatAsset;
 
 
 

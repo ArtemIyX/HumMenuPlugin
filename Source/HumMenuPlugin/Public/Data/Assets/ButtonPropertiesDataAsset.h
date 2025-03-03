@@ -9,7 +9,7 @@
 /**
  * 
  */
-UCLASS(BlueprintType)
+UCLASS(Blueprintable, BlueprintType)
 class HUMMENUPLUGIN_API UButtonPropertiesDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()
