@@ -16,10 +16,10 @@ class HUMMENUPLUGIN_API UMessageBoxBase : public UObject
 	
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox", meta = (ExposeOnSpawn = "true"))
 	FText MessageTitleText;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox", meta = (ExposeOnSpawn = "true"))
 	FText MessageInfoText;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "MessageBox")
@@ -30,4 +30,15 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Option")
 	UUserWidget* CreateNewWidget(APlayerController* InPlayerController, TSubclassOf<UUserWidget> WidgetClass);
+
+
+	UFUNCTION(BlueprintCallable, Category = "MessageBox")
+	void CloseMessageWindow(bool bIsCrossClose = false);
+
+
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnCloseMessageWindow, bool, bIsCrossClose);
+
+	UPROPERTY(BlueprintAssignable, Category = "MessageBox")
+	FOnCloseMessageWindow OnCloseMessageWindow;
 };

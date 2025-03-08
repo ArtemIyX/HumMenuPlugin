@@ -42,5 +42,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox")
 	FSlateBrush MessageBoxDownBlockStyle;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox")
+	float MessageBoxZOrder;
+
+
 	UMessageBoxStyle();
 };

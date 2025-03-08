@@ -69,3 +69,8 @@ UUserWidget* UMessageBoxBase::CreateNewWidget(APlayerController* InPlayerControl
 	return NewWidget;
 }
 
+void UMessageBoxBase::CloseMessageWindow(bool bIsCrossClose)
+{
+	OnCloseMessageWindow.Broadcast(bIsCrossClose);
+}
+
