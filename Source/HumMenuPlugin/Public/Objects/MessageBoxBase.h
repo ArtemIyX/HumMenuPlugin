@@ -16,14 +16,14 @@ class HUMMENUPLUGIN_API UMessageBoxBase : public UObject
 	
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox", meta = (ExposeOnSpawn = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox")
 	FText MessageTitleText;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox", meta = (ExposeOnSpawn = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox")
 	FText MessageInfoText;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "MessageBox")
-	void AddMessageToViewport(UUserWidget* MessageWidgetRef);
+	void AddMessageToViewport(APlayerController* PlayerController);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Option", meta = (WorldContext = "WorldContextObject", ShowWorldContextPin))
 	UUserWidget* GetMessageBoxWidget(UObject* WorldContextObject, APlayerController* InPlayerController);

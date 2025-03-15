@@ -43,8 +43,13 @@ public:
 	FSlateBrush MessageBoxDownBlockStyle;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBox")
-	float MessageBoxZOrder;
+	int32 MessageBoxZOrder;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBoxButtonText")
+	FText ApplyButtonText;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBoxButtonText")
+	FText RejectButtonText;
 
 	UMessageBoxStyle();
 };

@@ -4,7 +4,7 @@
 #include "Objects/MessageBoxBase.h"
 
 
-void UMessageBoxBase::AddMessageToViewport_Implementation(UUserWidget* MessageWidgetRef)
+void UMessageBoxBase::AddMessageToViewport_Implementation(APlayerController* PlayerController)
 {
 
 }

@@ -6,5 +6,5 @@
 UMessageBoxStyle::UMessageBoxStyle()
 {
 	AssetType = TEXT("MbStyle");
-	MessageBoxZOrder = 0.0f;
+	MessageBoxZOrder = 0;
 }
