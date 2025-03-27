@@ -51,5 +51,14 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "MessageBoxButtonText")
 	FText RejectButtonText;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TextMessageBox")
+	FText NullTextBoxErrorText;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TextMessageBox")
+	FSlateBrush TextBoxStyle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "TextMessageBox")
+	FSlateBrush TextBoxStyleHovered;
+
 	UMessageBoxStyle();
 };
