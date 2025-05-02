@@ -11,6 +11,9 @@ class UMenuButtonCommand;
  * 
  */
 UCLASS()
+    /**
+   * @brief A data asset that describes the button both functionally and visually
+   */
 class HUMMENUPLUGIN_API UButtonActionDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()
@@ -19,9 +22,15 @@ public:
     UButtonActionDataAsset();
 
 public:
+    /**
+   * @brief Visual text of the button
+   */
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Button")
     FText ButtonText;
 	
+    /**
+   * @brief A button object that characterizes the functionality when the button is pressed
+   */
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Button")
     TSoftClassPtr<UMenuButtonCommand> ButtonObjectClass;
 };

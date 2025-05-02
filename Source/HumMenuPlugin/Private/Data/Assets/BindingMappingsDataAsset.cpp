@@ -2,7 +2,9 @@
 
 
 #include "Data/Assets/BindingMappingsDataAsset.h"
-
+/**
+* @brief Constructor sets the Data Asset **BindingMappingsDA** type
+*/
 UBindingMappingsDataAsset::UBindingMappingsDataAsset()
 {
 

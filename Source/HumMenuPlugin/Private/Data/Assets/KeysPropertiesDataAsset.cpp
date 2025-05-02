@@ -2,9 +2,11 @@
 
 
 #include "Data/Assets/KeysPropertiesDataAsset.h"
-
+/**
+* @brief Constructor sets the Data Asset **KeyProperties** type
+*/
 UKeysPropertiesDataAsset::UKeysPropertiesDataAsset()
 {
 
-	AssetType = TEXT("KeysProperties");
+	AssetType = TEXT("KeyProperties");
 }

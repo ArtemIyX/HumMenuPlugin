@@ -11,11 +11,26 @@ class UWidgetsPropertiesDataAsset;
  * 
  */
 UCLASS()
+/**
+ * @brief  Library for Blueprint functions related to the Menu Plugin.
+ *
+ * Contains helper functions to simplify working with menu-related systems, options,
+ * and other plugin functionality directly from Blueprints.
+ */
 class HUMMENUPLUGIN_API UMenuPluginBlueprintLibrary : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 
 public:
+		/**
+	 * @brief Retrieves a reference to the Widgets Properties Data Asset.
+	 *
+	 * Provides access to a data asset containing configuration and properties
+	 * for menu-related widgets within the plugin.
+	 *
+	 * @return Soft object pointer to a UWidgetsPropertiesDataAsset instance.
+	 */	
+
 	UFUNCTION(BlueprintCallable, Category = "MenuPluginLibrary|Widget Settings")
 	static TSoftObjectPtr<UWidgetsPropertiesDataAsset> GetWidgetPropertiesDataAsset();
 
