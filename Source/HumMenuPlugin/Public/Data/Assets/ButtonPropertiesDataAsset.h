@@ -11,8 +11,13 @@
  */
 UCLASS(Blueprintable, BlueprintType)
 /**
-* @brief Data asset that describes the general properties of buttons in the project
-*/
+ * @brief Data asset that defines general button properties used throughout the project.
+ *
+ * This asset encapsulates common button configuration parameters such as sounds
+ * for button interactions and the visual appearance when hovering over buttons.
+ * 
+ * @note By configuring this data asset, you set the general appearance  for UButton elements in plugin, via UWidgetsPropertiesDataAsset::ButtonProperties(located in Developer Settings - UWidgetPropertiesSettings)
+ */
 class HUMMENUPLUGIN_API UButtonPropertiesDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()

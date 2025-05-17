@@ -67,9 +67,6 @@ public:
 
 
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	TSubclassOf<UUserWidget> OptionWidget;
-
 
 		/**
 	 * Essentially a wrapper around the standard CreateWidget() function.

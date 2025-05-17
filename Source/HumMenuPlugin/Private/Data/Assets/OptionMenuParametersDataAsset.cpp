@@ -3,6 +3,9 @@
 
 #include "Data/Assets/OptionMenuParametersDataAsset.h"
 
+/**
+* @brief Constructor sets the Data Asset **OptionMenuParameters** type
+*/
 
 UOptionMenuParametersDataAsset::UOptionMenuParametersDataAsset()
 {

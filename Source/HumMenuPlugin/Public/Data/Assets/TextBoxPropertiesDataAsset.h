@@ -10,6 +10,13 @@
  * 
  */
 UCLASS(BlueprintType)
+/**
+ * @brief Data Asset class for configuring text box appearance in the menu system.
+ *
+ * Contains editable styling settings for text box widgets used within the plugin.
+ * 
+ * @note By configuring this data asset, you define the parameters of the UTextBox element in the plugin via UWidgetsPropertiesDataAsset::TextBoxProperties (located in Developer Settings - UWidgetPropertiesSettings)
+ */
 class HUMMENUPLUGIN_API UTextBoxPropertiesDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()
@@ -17,6 +24,12 @@ class HUMMENUPLUGIN_API UTextBoxPropertiesDataAsset : public UAdvancedDataAsset
 
 public:
 	UTextBoxPropertiesDataAsset();
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Text Box Settings") //Scroll bar style
+	/**
+	 * @brief Text box style settings for menu UI.
+	 *
+	 * Defines appearance and behavior of editable text box widgets, including font, background,
+	 * scrollbar appearance, and other styling options.
+	 */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Text Box Settings") 
 	FEditableTextBoxStyle MenuTextBox;
 };

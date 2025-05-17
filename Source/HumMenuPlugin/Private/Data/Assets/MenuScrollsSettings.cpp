@@ -2,7 +2,9 @@
 
 
 #include "Data/Assets/MenuScrollsSettings.h"
-
+/**
+ * @brief Constructor sets the Data Asset **ScrollSettings** type.
+ */
 UMenuScrollsSettings::UMenuScrollsSettings(): MenuScrollThickness()
 {
 

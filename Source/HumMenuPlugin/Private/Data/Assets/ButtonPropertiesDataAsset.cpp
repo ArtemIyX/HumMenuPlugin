@@ -4,8 +4,8 @@
 #include "Data/Assets/ButtonPropertiesDataAsset.h"
 
 /**
- * @brief Constructor that sets the type of data asset
- */
+* @brief Constructor sets the Data Asset **ButtonProperties** type
+*/
 UButtonPropertiesDataAsset::UButtonPropertiesDataAsset()
 {
 	AssetType = TEXT("ButtonProperties");

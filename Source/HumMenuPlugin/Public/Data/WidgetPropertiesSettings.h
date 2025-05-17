@@ -33,7 +33,7 @@ public:
 
 public:
 	/**
-	 * @brief Soft reference to a Widgets Properties Data Asset.
+	 * @brief Soft pointer to a Widgets Properties Data Asset.
 	 *
 	 * This asset contains configuration data for UI widgets.
 	 * Can be set through Project Settings under "Widgets Settings" category.
