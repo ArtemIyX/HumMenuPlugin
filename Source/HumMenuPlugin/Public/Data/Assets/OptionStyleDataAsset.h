@@ -12,11 +12,16 @@
  * 
  */
 UCLASS(Blueprintable,BlueprintType)
+/**
+ * @brief Data asset that defines the style for option buttons used in the plugin.
+ *
+ */
 class HUMMENUPLUGIN_API UOptionStyleDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()
 
 public:
+	/** Style settings for option buttons */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Style")
 	FButtonStyle ButtonStyle;
 

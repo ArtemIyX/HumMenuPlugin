@@ -11,6 +11,11 @@
  * 
  */
 UCLASS()
+/**
+ * @brief Data asset containing appearance properties for slider elements in the UI.
+ *
+ ** @note By configuring this data asset, you define the parameters of the USlider element in the plugin via UWidgetsPropertiesDataAsset::SliderProperties(located in Developer Settings - UWidgetPropertiesSettings)
+ */
 class HUMMENUPLUGIN_API USliderPropertiesDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()
@@ -18,6 +23,7 @@ class HUMMENUPLUGIN_API USliderPropertiesDataAsset : public UAdvancedDataAsset
 public:
 	USliderPropertiesDataAsset();
 
+	/** Slider style settings for menu and widget sliders. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Slider Properties")
 	FSliderStyle MenuSliderStyle; 
 };

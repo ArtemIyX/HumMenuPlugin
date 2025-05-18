@@ -9,6 +9,11 @@
  * 
  */
 UCLASS(Blueprintable, BlueprintType)
+/**
+ * @brief  Class used to describe a button command.
+ *
+ * * Can be extended in Blueprints to define specific actions executed when a menu button is pressed.
+ */
 class HUMMENUPLUGIN_API UMenuButtonCommand : public UObject
 {
 	GENERATED_BODY()

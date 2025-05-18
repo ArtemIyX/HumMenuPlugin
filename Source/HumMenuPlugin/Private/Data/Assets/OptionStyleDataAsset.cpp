@@ -2,7 +2,9 @@
 
 
 #include "Data/Assets/OptionStyleDataAsset.h"
-
+	/**
+* @brief Constructor sets the Data Asset **OptionStyle** type
+*/
 UOptionStyleDataAsset::UOptionStyleDataAsset()
 {
 

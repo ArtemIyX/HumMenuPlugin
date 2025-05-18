@@ -2,7 +2,9 @@
 
 
 #include "Data/Assets/CheckBoxPropertiesDataAsset.h"
-
+/**
+* @brief Constructor sets the Data Asset **BindingMappingsDA** type
+*/
 UCheckBoxPropertiesDataAsset::UCheckBoxPropertiesDataAsset()
 {
 

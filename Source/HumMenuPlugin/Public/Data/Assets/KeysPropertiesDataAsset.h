@@ -12,12 +12,22 @@
  * 
  */
 UCLASS(BlueprintType)
+
+/**
+* @brief Data asset that describes information about the key
+*/
 class HUMMENUPLUGIN_API UKeysPropertiesDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()
 
 public:
-    
+    /**
+ * @brief A map containing key-specific properties for input keys.
+ *
+ * This map stores data structures associated with specific keys.
+ * For example: the 'R' key can have a structure FInputKeyPropertiesStructure describing its icon, key name.
+ 
+ */
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Input Key Properties")
     TMap<FKey, FInputKeyPropertiesStructure> InputKeyPropertiesMap;
     UKeysPropertiesDataAsset();

@@ -50,10 +50,10 @@ void UOptionsBlockObject::GenerateOptions_Implementation(UObject* WorldContextOb
         return;
     }
 
-    // Очистка массива перед генерацией новых опций
+    
     OutOptions.Empty();
 
-    // TODO: Добавить логику генерации опций, если нужно
+   
 
     UE_LOG(LogHumMenu, Log, TEXT("%s: Options generated successfully."), TEXT(__FUNCTION__));
 }

@@ -10,12 +10,18 @@
 
 
 UCLASS()
+/**
+* @brief Data asset that describes the style of the widget element - Check Box
+*/
 class HUMMENUPLUGIN_API UCheckBoxPropertiesDataAsset : public UAdvancedDataAsset
 {
 	GENERATED_BODY()
 	
 public:
 	UCheckBoxPropertiesDataAsset();
+	/**
+	* @brief General style of Check Box
+	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CheckBox Style")
 	FCheckBoxStyle MenuCheckBoxStyle;
 };

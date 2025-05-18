@@ -15,6 +15,11 @@ UWidgetsPropertiesDataAsset::UWidgetsPropertiesDataAsset(): MenuBlurStrength(0),
                                                             BindingMappings(nullptr)
 {
 	ButtonProperties = nullptr;
+	/**
+* @brief Constructor sets the Data Asset **WidgetsProperties** type
+* 
+* @brief - Set MenuBlurStrength to 0
+*/
 	AssetType = TEXT("WidgetsProperties");
 }
 

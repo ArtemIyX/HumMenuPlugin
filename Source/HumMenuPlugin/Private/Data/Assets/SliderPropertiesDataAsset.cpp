@@ -3,6 +3,9 @@
 
 #include "Data/Assets/SliderPropertiesDataAsset.h"
 
+	/**
+* @brief Constructor sets the Data Asset **SliderProperties** type
+*/
 USliderPropertiesDataAsset::USliderPropertiesDataAsset()
 {
 

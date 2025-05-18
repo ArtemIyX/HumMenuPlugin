@@ -3,6 +3,7 @@
 
 #include "Data/Assets/TextBoxPropertiesDataAsset.h"
 
+/**@brief  Constructor sets the Data Asset **TextBoxProperties** type.*/
 UTextBoxPropertiesDataAsset::UTextBoxPropertiesDataAsset()
 {
 

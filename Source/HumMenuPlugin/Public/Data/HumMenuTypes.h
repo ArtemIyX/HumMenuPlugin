@@ -13,5 +13,6 @@ enum class ETextStyle : uint8
 	Text_Small UMETA(DisplayName = "Text Small"), // Small text type
 	Text_BigTitle UMETA(DisplayName = "Text Big Title"), // Big Title style
 	Text_SettingParameter UMETA(DisplayName = "Text Setting Parameter"),// Setting parameter text style
+	Text_MegaSmall UMETA(DisplayName = "Text Mega Small"),// Mega Small text style
 	Text_Max UMETA(Hidden)
 };
