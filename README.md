@@ -47,11 +47,10 @@ There is the possibility to easily customize the appearance of widget elements a
 
 ## Blueprint Subsystems
 
-- BPS_ServerSaver
+- BPS_ServerSaver (for server menu)
 ![subsystems](https://github.com/user-attachments/assets/17608cb9-b231-4df9-8108-3c69f4949d1e)
 
 ## Dependecies
-- [MenuPlugin](https://github.com/ArtemIyX/HumMenuPlugin)
 - [AdvancedAsset](https://github.com/ArtemIyX/AdvancedAssetUnreal)
 - [BlueprintSubsystems](https://github.com/ArtemIyX/BlueprintSubsystemsUnreal)
 - [DataSerializer](https://github.com/ArtemIyX/DataSerializerUnreal)
